@@ -74,7 +74,6 @@ so that I can only see the list of events I need to at that moment.
 ### :black_small_square: FEATURE 3: SPECIFY NUMBER OF EVENTS 
 
 **USER STORY:**
-
 As a user
 I should be able to “automatically see a reasonable amount of events which I can choose to adjust”,
 so that I see the optimum number of events that leads to a satisfying user experience.
@@ -98,7 +97,6 @@ so that I see the optimum number of events that leads to a satisfying user exper
 ### :black_small_square: FEATURE 4: USE THE APP WHEN OFFLINE 
 
 **USER STORY:**
-
 As a user
 I should be able to “use the app when offline”,
 so that I can have maximum access to the app.
@@ -122,7 +120,6 @@ so that I can have maximum access to the app.
 ### :black_small_square: FEATURE 5: DATA VISUALIZATION 
 
 **USER STORY:**
-
 As a user
 I should be able to “have visual representations of data (ie charts)”,
 so that I can get an instant impression of what’s going on.
