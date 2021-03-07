@@ -1,9 +1,13 @@
-# meet App :pushpin:
+# Meet App :pushpin:
 This app displays events for different cities that users have selected.
 
 It's a serverless, progressive web application (PWA) built with React using a test-driven
 development (TDD) technique. The application uses the Google Calendar API to fetch
 upcoming events.
+
+## Deployment
+
+Here is the [link to the Meet App](https://adstrat.github.io/meet/) on github-pages.
 
 ##  User Stories and Gerkhin Scenarios
 
