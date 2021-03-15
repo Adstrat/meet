@@ -12,7 +12,7 @@ const credentials = {
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
   redirect_uris: ["https://adstrat.github.io/meet/"],
-  javascript_origins: ["https://adstrat.github.io", "http://localhost:3000"],
+  javascript_origins: ["https://Adstrat.github.io", "http://localhost:3000"],
 };
 
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
@@ -40,7 +40,7 @@ module.exports.getAuthURL = async () => {
 };
 
 module.exports.getAccessToken = async (event) => {
-  // The values used to instantiate the OAuthClient are at the top of the file
+  // Create a new OAuth2Client
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
@@ -70,6 +70,54 @@ module.exports.getAccessToken = async (event) => {
           'Access-Control-Allow-Origin': '*',
         },
         body: JSON.stringify(token),
+      };
+    })
+    .catch((err) => {
+      // Handle error
+      console.error(err);
+      return {
+        statusCode: 500,
+        body: JSON.stringify(err),
+      };
+    });
+};
+
+module.exports.getCalendarEvents = async (event) => {
+  const oAuth2Client = new OAuth2(client_id, client_secret, redirect_uris[0]);
+
+  const access_token = decodeURIComponent(
+    `${event.pathParameters.access_token}`
+  );
+  oAuth2Client.setCredentials({ access_token });
+
+  return new Promise((resolve, reject) => {
+    calendar.events.list(
+      {
+        calendarId: calendar_id,
+        auth: oAuth2Client,
+        timeMin: new Date().toISOString(),
+        singleEvents: true,
+        orderBy: "startTime",
+      },
+      (error, response) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(response);
+        }
+      }
+    );
+  })
+    .then((results) => {
+      return {
+        // Respond with calendar events
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({
+          events: results.data.items,
+        }),
       };
     })
     .catch((err) => {
