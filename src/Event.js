@@ -29,12 +29,28 @@ class Event extends Component {
               onClick={this.handleShowDetails}
             >Show Details</button>
           )}
-
-
         </div>
+
+        {showDetails && (
+          <div>
+            <h3>About this Event:</h3>
+            <a
+              href={event.htmlLink}
+              target="_blank"
+            >
+              <button className>See details on Google Calendar</button>
+            </a>
+            <p>{event.description}</p>
+            <button
+              className="hide-details"
+              onClick={this.handleShowDetails}
+            >Hide Details</button>
+          </div>
+        )}
 
       </div>
     );
   }
 }
+
 export default Event;

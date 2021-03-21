@@ -5,9 +5,10 @@ import { mockData } from "../mock-data";
 
 describe("<Event /> component", () => {
 
-  let EventWrapper;
+  let EventWrapper, event;
   beforeAll(() => {
-    EventWrapper = shallow(<Event />);
+    event = mockData[0];
+    EventWrapper = shallow(<Event event={event} />);
   });
 
   test("renders event element", () => {
@@ -26,10 +27,20 @@ describe("<Event /> component", () => {
     expect(EventWrapper.find(".show-details")).toHaveLength(1);
   });
 
+  test("doesn't render details when first loaded", () => {
+    expect(EventWrapper.state("showDetails")).toBe(false);
+  })
+
   test("click on show details button to expand event details", () => {
     EventWrapper.setState({ showDetails: false });
     EventWrapper.find(".show-details").simulate("click");
     expect(EventWrapper.state("showDetails")).toBe(true);
+  });
+
+  test("click on hide details button to collapse event details", () => {
+    EventWrapper.setState({ showDetails: true });
+    EventWrapper.find(".hide-details").simulate("click");
+    expect(EventWrapper.state("showDetails")).toBe(false);
   });
 
 }) 
