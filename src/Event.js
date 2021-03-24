@@ -37,6 +37,7 @@ class Event extends Component {
             <a
               href={event.htmlLink}
               target="_blank"
+              rel="noreferrer"
             >
               <button className>See details on Google Calendar</button>
             </a>
