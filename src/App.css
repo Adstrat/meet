@@ -29,24 +29,30 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #457cf2;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
   height: 38px;
+  background-color: #ddebff;
 }
 
 .city {
   width: 250px;
 }
 
-.CitySearch {
+.CitySearch,
+.numberOfEvents {
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
   max-width: 300px;
   margin: auto;
   position: relative;
+}
+
+.input-message {
+  padding: 8px 0;
 }
 
 .suggestions {
@@ -85,14 +91,22 @@ input[type="number"] {
   position: relative;
 }
 
-.details-btn {
+.show-details,
+.hide-details {
   position: absolute;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
+  border: 1px solid #457cf2;
+  background-color: #ddebff;
   cursor: pointer;
+}
+
+.show-details:hover,
+.hide-details:hover {
+  box-shadow: 0 0 6px #4285f4;
 }
 
 .name {
@@ -114,11 +128,7 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.numberOfEvents {
-  width: 200px;
-  margin: 20px auto;
-  text-align: center;
-}
+
 
 .button-wrapper {
   display: grid;

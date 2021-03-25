@@ -39,7 +39,7 @@ class Event extends Component {
               target="_blank"
               rel="noreferrer"
             >
-              <button className>See details on Google Calendar</button>
+              <button className="google-btn">See details on Google Calendar</button>
             </a>
             <p>{event.description}</p>
             <button
