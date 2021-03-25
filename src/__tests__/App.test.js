@@ -29,7 +29,7 @@ describe("<App /> component", () => {
 
 describe("<App /> integration", () => {
 
-  test("App passes 'events' state as a prop to EventLst", () => {
+  test("App passes 'events' state as a prop to EventList", () => {
     const AppWrapper = mount(<App />);
     const AppEventsState = AppWrapper.state("events");
     expect(AppEventsState).not.toEqual(undefined);
@@ -67,6 +67,21 @@ describe("<App /> integration", () => {
     const allEvents = await getEvents();
     expect(AppWrapper.state("events")).toEqual(allEvents);
     AppWrapper.unmount();
+  })
+
+  test("App passes 'number of events' state as a prop to NumberOfEvents", () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberOfEventsState = AppWrapper.state("numberOfEvents");
+    expect(AppNumberOfEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppNumberOfEventsState);
+    AppWrapper.unmount();
+  })
+
+  test("get list of events matching the number of events selected by the user", async () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+
+
   })
 
 }); 
