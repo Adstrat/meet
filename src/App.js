@@ -21,7 +21,7 @@ class App extends Component {
         const locationEvents = (location === "all") ?
           events :
           events.filter((event) => event.location === location);
-        const filteredEvents = locationEvents.slica(0, numberOfEvents);
+        const filteredEvents = locationEvents.slice(0, numberOfEvents);
         this.setState({
           events: filteredEvents,
           currentLocation: location
@@ -32,7 +32,7 @@ class App extends Component {
         const locationEvents = (currentLocation === "all") ?
           events :
           events.filter((event) => event.location === currentLocation);
-        const filteredEvents = locationEvents.slica(0, numberOfEvents);
+        const filteredEvents = locationEvents.slice(0, numberOfEvents);
         this.setState({
           events: filteredEvents,
           numberOfEvents: eventCount
