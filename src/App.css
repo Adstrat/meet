@@ -208,8 +208,6 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-
-
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     flex-direction: row;
@@ -219,5 +217,22 @@ input[type="number"] {
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
+  }
+}
+
+.event {
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+@media only screen and (min-width: 992px) {
+  .EventsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+
+  }
+  .event {
+   margin: 10px;
   }
 }

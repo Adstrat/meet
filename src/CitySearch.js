@@ -30,7 +30,6 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-        <h2>Meet App</h2>
         <label className="input-message">Select a city:</label>
         <input
           type="text"
