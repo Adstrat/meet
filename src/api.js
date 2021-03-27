@@ -3,9 +3,8 @@ import axios from "axios";
 import NProgress from "nprogress";
 
 export const extractLocations = (events) => {
-  var extractLocations = events.map((event) => event.location);
-  var locations = [...new Set(extractLocations)];
-  return locations;
+  const extractLocations = events.map((event) => event.location);
+  return [...new Set(extractLocations)];
 };
 
 export const getEvents = async () => {
@@ -20,10 +19,10 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = "https://r1dakinba1.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + "/" + token;
+    const url = `https://r1dakinba1.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/${token}`;
     const result = await axios.get(url);
     if (result.data) {
-      var locations = extractLocations(result.data.events);
+      let locations = extractLocations(result.data.events);
       localStorage.setItem("lastEvents", JSON.stringify(result.data));
       localStorage.setItem("locations", JSON.stringify(locations));
     }
@@ -33,8 +32,9 @@ export const getEvents = async () => {
 };
 
 const removeQuery = () => {
+  let newurl;
   if (window.history.pushState && window.location.pathname) {
-    var newurl =
+    newurl =
       window.location.protocol +
       "//" +
       window.location.host +
@@ -49,7 +49,7 @@ const removeQuery = () => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    "https://r1dakinba1.execute-api.eu-central-1.amazonaws.com/dev/api/token" + "/" + encodeCode
+    `https://r1dakinba1.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`
   )
     .then((res) => {
       return res.json();
@@ -62,13 +62,11 @@ const getToken = async (code) => {
 }
 
 const checkToken = async (accessToken) => {
-  const result = await fetch(
+  return await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   )
     .then((res) => res.json())
     .catch((error) => error.json());
-
-  return result;
 }
 
 export const getAccessToken = async () => {
