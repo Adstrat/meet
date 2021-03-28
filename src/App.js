@@ -16,6 +16,7 @@ class App extends Component {
 
   updateEvents = (location, eventCount) => {
     const { currentLocation, numberOfEvents } = this.state;
+    // handleItemClicked() in <CitySearch>
     if (location) {
       getEvents().then((events) => {
         const locationEvents = (location === "all") ?
@@ -27,6 +28,7 @@ class App extends Component {
           currentLocation: location
         });
       });
+      // handleNumberChange() in <NumberOfEvents>
     } else {
       getEvents().then((events) => {
         const locationEvents = (currentLocation === "all") ?
