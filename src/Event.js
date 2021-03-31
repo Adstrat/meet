@@ -32,7 +32,7 @@ class Event extends Component {
         </div>
 
         {showDetails && (
-          <div>
+          <div className="event__Details">
             <h3>About this Event:</h3>
             <a
               href={event.htmlLink}
