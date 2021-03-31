@@ -36,12 +36,17 @@ so that I can see the list of events that take place in that city.
 
 #### SCENARIO 3: USER CAN SELECT A CITY FROM THE SUGGESTED LIST.
 
-**Given** the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
+**Given** the user was typing “Berlin” in the city textbox 
+
+**And** the list of suggested cities is showing
+
+**And** the list of suggested cities is showing
 
 **When** the user selects a city (e.g., “Berlin, Germany”) from the list
 
 **Then** their city should be changed to that city (i.e., “Berlin, Germany”)
-And the user should receive a list of upcoming events in that city
+
+**And** the user should receive a list of upcoming events in that city
 
 ### :black_small_square: FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS 
 
@@ -54,7 +59,7 @@ so that I can only see the list of events I need to at that moment.
 
 **Given** the users hasn’t chosen an event yet
 
-**When** the user first enters the view for a city
+**When** the user opens the app
 
 **Then** the user should only see event names, but not their details
 
@@ -62,7 +67,7 @@ so that I can only see the list of events I need to at that moment.
 
 **Given** the user has chosen an event
 
-**When** the user clicks on an event button
+**When** the user clicks on the 'show details' button
 
 **Then** the user should see details about that event
 
@@ -70,9 +75,9 @@ so that I can only see the list of events I need to at that moment.
 
 **Given** the user has decided to finish reading an event
 
-**When** the user clicks on the ‘hide’ button
+**When** the user clicks on the ‘hide details’ button
 
-**Then** the event details should disappear and only see event names, not details
+**Then** the event details should disappear and only the event names are displayed
 
 
 ### :black_small_square: FEATURE 3: SPECIFY NUMBER OF EVENTS 
@@ -84,9 +89,9 @@ so that I see the optimum number of events that leads to a satisfying user exper
 
 #### SCENARIO 1: WHEN A USER HASN’T CHOSEN HOW MANY EVENTS, 32 IS THE DEFAULT NUMBER.
 
-**Given** the page for a city is open but the user hasn’t done anything yet
+**Given** the user hasn't specified the number of events yet
 
-**When** the user chooses a city
+**When** the user opens the app
 
 **Then** the user will see 32 possible events
 
