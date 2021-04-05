@@ -51,6 +51,12 @@ input[type="number"] {
   position: relative;
 }
 
+.alert-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .input-message {
   padding: 8px 0;
 }
