@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 30px 5%;
 }
 
 .App * {
@@ -146,7 +146,7 @@ input[type="number"] {
 
 .Alert {
   position: fixed;
-  top: 20px;
+  top: 10px;
 }
 
 .data-vis-wrapper {
