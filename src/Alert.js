@@ -36,7 +36,8 @@ class ErrorAlert extends Alert {
   getStyle = () => {
     return {
       color: this.color,
-      fontWeight: "bold"
+      fontWeight: "bold",
+      margin: "28px"
     };
   }
 }
@@ -49,7 +50,8 @@ class WarningAlert extends Alert {
   getStyle = () => {
     return {
       color: this.color,
-      fontSize: "20px"
+      fontSize: "20px",
+      margin: "25px"
     };
   }
 }
