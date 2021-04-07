@@ -39,7 +39,19 @@ class ErrorAlert extends Alert {
       fontWeight: "bold"
     };
   }
-
 }
 
-export { InfoAlert, ErrorAlert };
+class WarningAlert extends Alert {
+  constructor(props) {
+    super(props);
+    this.color = "green"
+  }
+  getStyle = () => {
+    return {
+      color: this.color,
+      fontSize: "20px"
+    };
+  }
+}
+
+export { InfoAlert, ErrorAlert, WarningAlert };
