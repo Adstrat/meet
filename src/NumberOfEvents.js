@@ -17,7 +17,7 @@ class NumberOfEvents extends Component {
       this.setState({
         errorText: "Select a number between 1 and 32"
       })
-    } else if (value.toLowerCase() != value.toUpperCase()) {
+    } else if (value.toLowerCase() !== value.toUpperCase()) {
       this.setState({
         warningText: "Input field only accepts numbers"
       })
