@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   padding: 30px 5%;
+  background-image: linear-gradient(to top, #e6f0ff, #fff);
 }
 
 .App * {
