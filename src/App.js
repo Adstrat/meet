@@ -5,6 +5,7 @@ import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from './api';
 import "./nprogress.css";
+import { OfflineAlert } from "./Alert";
 
 class App extends Component {
   state = {
@@ -52,8 +53,17 @@ class App extends Component {
           locations: extractLocations(events)
         });
       }
+      if (!navigator.online) {
+        this.setState({
+          offlineText: "You are currently offline. Events shown may not be up-to-date"
+        });
+      } else {
+        this.setState({
+          offlineText: ""
+        });
+      }
     });
-  }
+  };
 
   componentWillUnmount() {
     this.mounted = false;
@@ -62,6 +72,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="alert-message">
+          <OfflineAlert text={this.state.offlineText} />
+        </div>
         <h2 className="meet-title">Meet App</h2>
         <CitySearch
           locations={this.state.locations}
