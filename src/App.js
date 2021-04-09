@@ -55,7 +55,7 @@ class App extends Component {
       }
       if (!navigator.online) {
         this.setState({
-          offlineText: "You are currently offline. Events shown may not be up-to-date"
+          offlineText: "You are currently offline. Events shown might not be up-to-date"
         });
       } else {
         this.setState({
