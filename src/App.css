@@ -97,7 +97,7 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #457cf2;
   border-radius: 4px;
   position: relative;
 }
@@ -139,8 +139,6 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-
-
 .button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -179,18 +177,18 @@ input[type="number"] {
   width: 184px;
   height: 42px;
   margin: 1rem;
-  background-color: #ffdd99;
+  background-color: #ffe7b3;
   border-radius: 4px;
- border: 2px solid #e60000;
- color: #990000;
+ border: 1px solid #e60000;
 }
 .google-btn:hover {
-  background-color: #ffe6b3;
-  border: 2px solid #ff0000;
+  box-shadow: 0 0 6px #cc8800;
+  cursor: pointer;
 }
 .google-btn:active {
   background: #b37700;
 }
+
 .google-icon-wrapper {
   position: absolute;
   margin-top: 1px;
