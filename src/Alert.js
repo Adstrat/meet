@@ -64,7 +64,7 @@ class OfflineAlert extends Alert {
   getStyle = () => {
     return {
       color: this.color,
-      backgroundColor: purple
+      backgroundColor: "#483D8B"
     }
   }
 }
