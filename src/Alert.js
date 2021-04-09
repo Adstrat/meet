@@ -59,14 +59,7 @@ class WarningAlert extends Alert {
 class OfflineAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = "white"
-  }
-  getStyle = () => {
-    return {
-      color: this.color,
-      backgroundColor: "firebrick",
-      padding: "3px",
-    }
+    this.color = "firebrick"
   }
 }
 
