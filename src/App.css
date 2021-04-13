@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   padding: 30px 5%;
-  background-image: linear-gradient(to bottom, #e6f0ff, #fff);
+  background-image: linear-gradient(to bottom right, #ddebff, #fff,  #cce1ff)
 }
 
 .App * {
