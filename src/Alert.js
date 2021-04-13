@@ -26,6 +26,12 @@ class InfoAlert extends Alert {
     super(props);
     this.color = "blue";
   }
+  getStyle = () => {
+    return {
+      color: this.color,
+      margin: "28px"
+    };
+  }
 }
 
 class ErrorAlert extends Alert {
@@ -37,7 +43,7 @@ class ErrorAlert extends Alert {
     return {
       color: this.color,
       fontWeight: "bold",
-      margin: "28px"
+      margin: "48px"
     };
   }
 }
@@ -51,7 +57,7 @@ class WarningAlert extends Alert {
     return {
       color: this.color,
       fontSize: "20px",
-      margin: "25px"
+      margin: "45px"
     };
   }
 }
