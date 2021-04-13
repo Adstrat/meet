@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Moment from "react-moment";
 
 class Event extends Component {
   state = {
@@ -20,9 +21,15 @@ class Event extends Component {
     return (
       <div className="event">
         <div className="overview">
+
           <h2>{event.summary}</h2>
-          <p>{event.start.dateTime}</p>
+
+          <Moment local>
+            {event.start.dateTime}
+          </Moment>
+
           <p>{event.location}</p>
+
           {!showDetails && (
             <button
               className="show-details"
