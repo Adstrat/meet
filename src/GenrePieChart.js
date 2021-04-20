@@ -10,10 +10,16 @@ const GenrePieChart = ({ events }) => {
   }, [events]);
 
   const getData = () => {
-    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
+    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
     const data = genres.map((genre) => {
       const value = events.filter(({ summary }) => {
-        return summary.split(" ").includes(genre);
+        if (summary.split(" ").includes(genre)) {
+          return true;
+        }
+        if (summary.indexOf(genre) >= 0) {
+          return true;
+        }
+        return false;
       }).length;
       return { name: genre, value };
     })
