@@ -76,7 +76,46 @@ const mockData = [
       useDefault: true
     },
     eventType: "default"
-  }
+  },
+  {
+    kind: "calendar#event",
+    etag: '"3181159875584000"',
+    id: "3qtd6uscq4tsi6gc7nmmtpqlct_20200520T120000Z",
+    status: "confirmed",
+    htmlLink: "https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA1MjBUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    created: "2020-05-19T19:14:30.000Z",
+    updated: "2020-05-27T11:45:37.792Z",
+    summary: "Fun with Node.js",
+    description: "Do you know that Node.js is basically a server having the capability of executing JavaScript? If you are familiar with JS, Node.js will be an easy ride. Join us if you want to learn how to build the server-side of an app using Node.js.",
+    location: "Nairobi, Kenya",
+    creator: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true
+    },
+    organizer: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true
+    },
+    start: {
+      dateTime: "2020-05-20T14:00:00+02:00",
+      timeZone: "Europe/Berlin"
+    },
+    end: {
+      dateTime: "2020-05-20T15:00:00+02:00",
+      timeZone: "Europe/Berlin"
+    },
+    recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
+    originalStartTime: {
+      dateTime: "2020-05-20T14:00:00+02:00",
+      timeZone: "Europe/Berlin"
+    },
+    iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
+    sequence: 0,
+    reminders: {
+      useDefault: true
+    },
+    eventType: "default"
+  },
 ];
 
 export { mockData };
