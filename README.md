@@ -1,9 +1,15 @@
+
+
+
+
 # Meet App :pushpin:
 This app displays events for different cities that users have selected.
 
 It's a serverless, progressive web application (PWA) built with React using a test-driven
 development (TDD) technique. The application uses the Google Calendar API to fetch
 upcoming events.
+
+https://user-images.githubusercontent.com/73385073/124001316-c963ff00-d9d4-11eb-92fe-582d2663556c.mp4
 
 ## Deployment
 
